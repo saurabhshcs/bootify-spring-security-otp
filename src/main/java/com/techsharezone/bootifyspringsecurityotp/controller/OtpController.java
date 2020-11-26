@@ -50,7 +50,7 @@ public class OtpController {
 //
 //        String message = emailTemplate.getTemplate(replacements);
 
-        emailService.sendOTPMsg("saurabhshcs@yahoo.com", "OTP-Spring Boot", otp.toString());
+        emailService.sendOTPMsg("techsharezone@gmail.com", "OTP-Spring Boot", otp.toString());
 
         return "otpPage";
     }
