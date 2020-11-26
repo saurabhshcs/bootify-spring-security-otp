@@ -43,14 +43,14 @@ public class OtpController {
         Integer otp = otpService.generateOtp(userName);
         LOG.info("OTP [{}] is generated for the user [{}]", otp, userName);
 
-        EmailTemplate emailTemplate = new EmailTemplate("templates/sendOtp.html");
-        Map<String, String> replacements = new HashMap<>();
-        replacements.put("User:", userName);
-        replacements.put("OTP", otp.toString());
+//        EmailTemplate emailTemplate = new EmailTemplate("templates/sendOtp.html");
+//        Map<String, String> replacements = new HashMap<>();
+//        replacements.put("User:", userName);
+//        replacements.put("OTP", otp.toString());
+//
+//        String message = emailTemplate.getTemplate(replacements);
 
-        String message = emailTemplate.getTemplate(replacements);
-
-        emailService.sendOTPMsg("saurabhshcs@yahoo.com", "OTP-Spring Boot", message);
+        emailService.sendOTPMsg("saurabhshcs@yahoo.com", "OTP-Spring Boot", otp.toString());
 
         return "otpPage";
     }
